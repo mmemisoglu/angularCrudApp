@@ -1,53 +1,74 @@
 <div mat-dialog-title>
-    <h1>Employee Form</h1>
+    <h1>Müşteri Formu</h1>
 </div>
-<div mat-dialog-content class="content">
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Ad</mat-label>
-            <input matInput type="text" placeholder="Ex. Mustafa">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Soyad</mat-label>
-            <input matInput type="text" placeholder="Ex. Memişoğlu">
-        </mat-form-field>
+
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Ad</mat-label>
+                <input matInput type="text" placeholder="Örn: Mustafa" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Soyad</mat-label>
+                <input matInput type="text" placeholder="Örn: Memişoğlu" formControlName="lastName">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" placeholder="Örn: 2m@zorlu.com" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Doğum Tarihi</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-radio-group aria-label="Select an option" formControlName="gender">
+                <mat-label><b>Cinsiyet</b></mat-label>
+                <mat-radio-button value="male">Erkek</mat-radio-button>
+                <mat-radio-button value="female">Kadın</mat-radio-button>
+                <mat-radio-button value="others">Belirtmek istemiyorum</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline" >
+                <mat-label>Eğitim</mat-label>
+                <mat-select formControlName="education">
+                    <mat-option *ngFor="let val of education" [value]="val">
+                        {{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Şirket</mat-label>
+                <input matInput type="text" placeholder="Örn: Korteks" formControlName="company">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Deneyim</mat-label>
+                <input matInput type="number" placeholder="Örn: 4" formControlName="experience">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Paket</mat-label>
+                <input matInput type="number" placeholder="Örn: 12" formControlName="package">
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button>İptal</button>
+        <button mat-raised-button color="primary" type="submit">Kaydet</button>
     </div>
 
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput type="text" placeholder="Ex. Mustafa">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>Doğum Tarihi</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-    </div>
-
-    <div class="row">
-        <mat-radio-group aria-label="Select an option">
-            <mat-label><b>Cinsiyet</b></mat-label>
-            <mat-radio-button value="male">Erkek</mat-radio-button>
-            <mat-radio-button value="female">Kadın</mat-radio-button>
-            <mat-radio-button value="others">Belirtmek istemiyorum</mat-radio-button>
-        </mat-radio-group>
-    </div>
-
-    <div class="row">
-        <mat-form-field appearance="outline">
-            <mat-label>Favorite food</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let val of education" [value]="val">
-               {{val}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-    </div>
-</div>
-<div mat-dialog-actions>
-    <button mat-raised-button>Cancel</button>
-    <button mat-raised-button color="primary">Save</button>
-</div>
+</form>
