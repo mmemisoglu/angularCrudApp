@@ -28,18 +28,6 @@
       "experience": 1,
       "package": 11,
       "id": 1
-    },
-    {
-      "firstName": "Görkem",
-      "lastName": "Görkemm",
-      "email": "dsadsa",
-      "dob": "2023-07-11T21:00:00.000Z",
-      "gender": "Kadın",
-      "education": "Lisans",
-      "company": "dsadsa",
-      "experience": 1212,
-      "package": 1212,
-      "id": 2
     }
   ]
 }
