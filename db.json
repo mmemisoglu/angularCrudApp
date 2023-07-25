@@ -15,5 +15,19 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "employees": [
+    {
+      "firstName": "Mustafa",
+      "lastName": "Memişoğlu",
+      "email": "m@m",
+      "dob": "2023-07-09T21:00:00.000Z",
+      "gender": "male",
+      "education": "Lisans",
+      "company": "Korteks",
+      "experience": 1,
+      "package": 11,
+      "id": 1
+    }
+  ]
 }
