@@ -33,9 +33,9 @@
         <div class="row">
             <mat-radio-group aria-label="Select an option" formControlName="gender">
                 <mat-label><b>Cinsiyet</b></mat-label>
-                <mat-radio-button value="male">Erkek</mat-radio-button>
-                <mat-radio-button value="female">Kadın</mat-radio-button>
-                <mat-radio-button value="others">Belirtmek istemiyorum</mat-radio-button>
+                <mat-radio-button value="Erkek">Erkek</mat-radio-button>
+                <mat-radio-button value="Kadın">Kadın</mat-radio-button>
+                <mat-radio-button value="Belirtmek istemiyor">Belirtmek istemiyorum</mat-radio-button>
             </mat-radio-group>
         </div>
 
@@ -67,8 +67,8 @@
 
     </div>
     <div mat-dialog-actions class="action">
-        <button mat-raised-button>İptal</button>
-        <button mat-raised-button color="primary" type="submit">Kaydet</button>
+        <button mat-raised-button type="button" [mat-dialog-close]="false">İptal</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Güncelle': 'Kaydet'}}</button>
     </div>
 
 </form>
