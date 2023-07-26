@@ -15,9 +15,9 @@ Uygulamanın arayüz fotoğrafları "appInterfaceImg" adlı klasör içerisinde 
 * Çalışan ana verilerini filtreleme
 
 Mevcut uygulamayı tarayıcıda açar.
-`ng serve -o `
+* `ng serve -o `
 Mevcut json dosyasını Json-server ile local üzerinden ayağa kaldırır.
-`json-server --watch db.json`
+* `json-server --watch db.json`
 
 Yukarıda bulunan kodları çalıştırabilmek için bilgisayarınızda node, angular ve json-server kurulu olmak zorundadır. 
 
@@ -33,9 +33,9 @@ I've created a simple CRUD APP with Angular, where the application data is store
 * Filter employee main data.
 
 Opens the current application in the browser.
-`ng serve -o `
+* `ng serve -o `
 It stands up the existing json file with Json-server over local.
-`json-server --watch db.json`
+* `json-server --watch db.json`
 
 In order to run the above code, you must have Node, Angular, and JSON-Server installed on your computer.
 
